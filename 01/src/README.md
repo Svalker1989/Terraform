@@ -58,7 +58,7 @@ resource "docker_container" "nginx" {
 Вывод команды:  
 ![](https://github.com/Svalker1989/Terraform_vvedenie/blob/main/01/src/Z1_5.PNG)  
 6. Замените имя docker-контейнера в блоке кода на ```hello_world```. Не перепутайте имя контейнера и имя образа. Мы всё ещё продолжаем использовать name = "nginx:latest". Выполните команду ```terraform apply -auto-approve```.
-Объясните своими словами, в чём может быть опасность применения ключа  ```-auto-approve```. Догадайтесь или нагуглите зачем может пригодиться данный ключ? В качестве ответа дополнительно приложите вывод команды ```docker ps```.
+Объясните своими словами, в чём может быть опасность применения ключа  ```-auto-approve```. Догадайтесь или нагуглите зачем может пригодиться данный ключ? В качестве ответа дополнительно приложите вывод команды ```docker ps```.  
 Вывод команды:  
 ![](https://github.com/Svalker1989/Terraform_vvedenie/blob/main/01/src/Z1_6.PNG)  
 **Ответ: `-auto-approve` можно применить только если инфру строят только из 1 точки. Если инфру может создать кто-то помимо нас, то автоапрувом можно разрушить часть, которую мы не создавали.**
@@ -75,7 +75,7 @@ Cодержимое файла **terraform.tfstate**:
   "check_results": null
 }
 ```
-9. Объясните, почему при этом не был удалён docker-образ **nginx:latest**. Ответ **ОБЯЗАТЕЛЬНО НАЙДИТЕ В ПРЕДОСТАВЛЕННОМ КОДЕ**, а затем **ОБЯЗАТЕЛЬНО ПОДКРЕПИТЕ** строчкой из документации [**terraform провайдера docker**](https://docs.comcloud.xyz/providers/kreuzwerker/docker/latest/docs).  (ищите в классификаторе resource docker_image )
+9. Объясните, почему при этом не был удалён docker-образ **nginx:latest**. Ответ **ОБЯЗАТЕЛЬНО НАЙДИТЕ В ПРЕДОСТАВЛЕННОМ КОДЕ**, а затем **ОБЯЗАТЕЛЬНО ПОДКРЕПИТЕ** строчкой из документации [**terraform провайдера docker**](https://docs.comcloud.xyz/providers/kreuzwerker/docker/latest/docs).  (ищите в классификаторе resource docker_image )  
 **Ответ:
 Суть в директиве `keep_locally = true`
 [Из доки](https://registry.terraform.io/providers/kreuzwerker/docker/latest/docs/resources/image)**
