@@ -10,7 +10,7 @@
 ### Чек-лист готовности к домашнему заданию
 
 1. Скачайте и установите **Terraform** версии =1.5.Х (версия 1.6 может вызывать проблемы с Яндекс провайдером) . Приложите скриншот вывода команды ```terraform --version```.
-![Z_](https://github.com/Svalker1989/Terraform_vvedenie/blob/main/01/src/Z_.PNG)
+![Z_](https://github.com/Svalker1989/Terraform_vvedenie/blob/main/01/src/Z_.PNG)  
 2. Скачайте на свой ПК этот git-репозиторий. Исходный код для выполнения задания расположен в директории **01/src**.
 3. Убедитесь, что в вашей ОС установлен docker.
 4. Зарегистрируйте аккаунт на сайте https://hub.docker.com/, выполните команду docker login и введите логин, пароль.
@@ -56,11 +56,11 @@ resource "docker_container" "nginx" {
   }
 ```
 Вывод команды:
-![](https://github.com/Svalker1989/Terraform_vvedenie/blob/main/01/src/Z1_5.PNG)
+![](https://github.com/Svalker1989/Terraform_vvedenie/blob/main/01/src/Z1_5.PNG)  
 6. Замените имя docker-контейнера в блоке кода на ```hello_world```. Не перепутайте имя контейнера и имя образа. Мы всё ещё продолжаем использовать name = "nginx:latest". Выполните команду ```terraform apply -auto-approve```.
 Объясните своими словами, в чём может быть опасность применения ключа  ```-auto-approve```. Догадайтесь или нагуглите зачем может пригодиться данный ключ? В качестве ответа дополнительно приложите вывод команды ```docker ps```.
 Вывод команды:
-![](https://github.com/Svalker1989/Terraform_vvedenie/blob/main/01/src/Z1_6.PNG)
+![](https://github.com/Svalker1989/Terraform_vvedenie/blob/main/01/src/Z1_6.PNG)  
 **Ответ: `-auto-approve` можно применить только если инфру строят только из 1 точки. Если инфру может создать кто-то помимо нас, то автоапрувом можно разрушить часть, которую мы не создавали.**
 8. Уничтожьте созданные ресурсы с помощью **terraform**. Убедитесь, что все ресурсы удалены. Приложите содержимое файла **terraform.tfstate**. 
 Cодержимое файла **terraform.tfstate**:
