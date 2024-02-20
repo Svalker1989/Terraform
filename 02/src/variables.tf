@@ -25,17 +25,24 @@ variable "default_cidr" {
   description = "https://cloud.yandex.ru/docs/vpc/operations/subnet-create"
 }
 
-variable "vpc_name" {
-  type        = string
-  default     = "develop"
-  description = "VPC network & subnet name"
+variable "vms_resources" {
+  type = map(object({
+    cores = number
+    memory  = number
+    core_fraction = number
+  }))
 }
 
+variable "metadata" {
+  type = map(object({
+    serial-port-enable = number
+    ssh-keys  = string
+  }))
+}
 
 ###ssh vars
 
-variable "vms_ssh_root_key" {
+/*variable "vms_ssh_public_root_key" {
   type        = string
-  default     = "<your_ssh_ed25519_key>"
-  description = "ssh-keygen -t ed25519"
-}
+  description = "user ssh public key"
+}*/
