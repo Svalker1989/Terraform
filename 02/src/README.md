@@ -101,17 +101,17 @@ ip адреса поменялись т.к. я делал destroy.
    Присвоил значения:  
    ```
    vms_resources = {
-  web={
+   web={
     cores= 2
     memory=1
     core_fraction=5
-  },
-  db= {
+   },
+   db= {
     cores= 2
     memory= 2
     core_fraction= 20
-  }
-}
+   }
+   }
    ```
 3. Создайте и используйте отдельную map переменную для блока metadata, она должна быть общая для всех ваших ВМ.
    ```
