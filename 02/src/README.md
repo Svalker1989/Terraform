@@ -97,6 +97,22 @@ ip адреса поменялись т.к. я делал destroy.
      }
    }
    ```
+    Значение переменной присвоил в terraform.tfvars. Объявление переменной в [variables.tf](https://github.com/Svalker1989/Terraform_vvedenie/blob/main/02/src/variables.tf)  
+   Присвоил значения:  
+   ```
+   vms_resources = {
+  web={
+    cores= 2
+    memory=1
+    core_fraction=5
+  },
+  db= {
+    cores= 2
+    memory= 2
+    core_fraction= 20
+  }
+}
+   ```
 3. Создайте и используйте отдельную map переменную для блока metadata, она должна быть общая для всех ваших ВМ.
    ```
    пример из terraform.tfvars:
