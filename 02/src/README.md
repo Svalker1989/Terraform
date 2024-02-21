@@ -48,32 +48,34 @@
 
 ### Задание 2
 
-1. Замените все хардкод-**значения** для ресурсов **yandex_compute_image** и **yandex_compute_instance** на **отдельные** переменные. К названиям переменных ВМ добавьте в начало префикс **vm_web_** .  Пример: **vm_web_name**.
-**Ответ:** в имени нельзя использовать _, поменял на -
-2. Объявите нужные переменные в файле [variables.tf](), обязательно указывайте тип переменной. Заполните их **default** прежними значениями из main.tf. 
-3. Проверьте terraform plan. Изменений быть не должно.   
-К сожалению сделал terraform destroy, потом изменил все захардкоженые параметры. 
+1. Замените все хардкод-**значения** для ресурсов **yandex_compute_image** и **yandex_compute_instance** на **отдельные** переменные. К названиям переменных ВМ добавьте в начало префикс **vm_web_** .  Пример: **vm_web_name**.  
+**Ответ:** в имени нельзя использовать _, поменял на -  
+`name        = "vm-web-${local.vm_web_name}"`  
+3. Объявите нужные переменные в файле [variables.tf](https://github.com/Svalker1989/Terraform_vvedenie/blob/main/02/src/variables.tf), обязательно указывайте тип переменной. Заполните их **default** прежними значениями из main.tf. 
+4. Проверьте terraform plan. Изменений быть не должно.   
 
 ### Задание 3
 
-1. Создайте в корне проекта файл [vms_platform.tf]() . Перенесите в него все переменные первой ВМ.
-2. Скопируйте блок ресурса и создайте с его помощью вторую ВМ в файле main.tf: **"netology-develop-platform-db"** ,  ```cores  = 2, memory = 2, core_fraction = 20```. Объявите её переменные с префиксом **vm_db_** в том же файле ('vms_platform.tf').  ВМ должна работать в зоне "ru-central1-b"
-3. Примените изменения.
-![Z3](https://github.com/Svalker1989/Terraform_vvedenie/blob/main/02/src/Z3.PNG)  
+1. Создайте в корне проекта файл [vms_platform.tf](https://github.com/Svalker1989/Terraform_vvedenie/blob/main/02/src/vms_platform.tf) . Перенесите в него все переменные первой ВМ.
+2. Скопируйте блок ресурса и создайте с его помощью вторую ВМ в файле [main.tf](https://github.com/Svalker1989/Terraform_vvedenie/blob/main/02/src/main.tf): **"netology-develop-platform-db"** ,  ```cores  = 2, memory = 2, core_fraction = 20```. Объявите её переменные с префиксом **vm_db_** в том же файле ('vms_platform.tf').  ВМ должна работать в зоне "ru-central1-b"
+**Ответ: Ссылки на файлы приложил**  
+4. Примените изменения.
+![Z3](https://github.com/Svalker1989/Terraform_vvedenie/blob/main/02/src/Z3.PNG)
+
 ### Задание 4
 
-1. Объявите в файле outputs.tf **один** output , содержащий: instance_name, external_ip, fqdn для каждой из ВМ в удобном лично для вас формате.
+1. Объявите в файле [outputs.tf](https://github.com/Svalker1989/Terraform_vvedenie/blob/main/02/src/outputs.tf) **один** output , содержащий: instance_name, external_ip, fqdn для каждой из ВМ в удобном лично для вас формате.
 2. Примените изменения.
 
 В качестве решения приложите вывод значений ip-адресов команды ```terraform output```.
 ![Z4](https://github.com/Svalker1989/Terraform_vvedenie/blob/main/02/src/Z4.PNG)  
+ip адреса поменялись т.к. я делал destroy.  
 
 ### Задание 5
 
-1. В файле locals.tf опишите в **одном** local-блоке имя каждой ВМ, используйте интерполяцию ${..} с НЕСКОЛЬКИМИ переменными по примеру из лекции.
+1. В файле [locals.tf](https://github.com/Svalker1989/Terraform_vvedenie/blob/main/02/src/locals.tf) опишите в **одном** local-блоке имя каждой ВМ, используйте интерполяцию ${..} с НЕСКОЛЬКИМИ переменными по примеру из лекции.
 2. Замените переменные внутри ресурса ВМ на созданные вами local-переменные.
 3. Примените изменения.
-
 
 ### Задание 6
 
@@ -103,10 +105,10 @@
      ssh-keys           = "ubuntu:ssh-ed25519 AAAAC..."
    }
    ```  
-  
+  Значение переменной присвоил в personal.auto.tfvars. Объявление переменной в [variables.tf](https://github.com/Svalker1989/Terraform_vvedenie/blob/main/02/src/variables.tf)
 5. Найдите и закоментируйте все, более не используемые переменные проекта.
 6. Проверьте terraform plan. Изменений быть не должно.
-
+Изменения внес [main.tf](https://github.com/Svalker1989/Terraform_vvedenie/blob/main/02/src/main.tf)
 ------
 
 ## Дополнительное задание (со звёздочкой*)
