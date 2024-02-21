@@ -121,7 +121,8 @@ ip адреса поменялись т.к. я делал destroy.
      ssh-keys           = "ubuntu:ssh-ed25519 AAAAC..."
    }
    ```  
-  Значение переменной присвоил в personal.auto.tfvars. Объявление переменной в [variables.tf](https://github.com/Svalker1989/Terraform_vvedenie/blob/main/02/src/variables.tf)
+Значение переменной присвоил в personal.auto.tfvars. Объявление переменной в [variables.tf](https://github.com/Svalker1989/Terraform_vvedenie/blob/main/02/src/variables.tf)
+    
 5. Найдите и закоментируйте все, более не используемые переменные проекта.
 6. Проверьте terraform plan. Изменений быть не должно.
 Изменения внес [main.tf](https://github.com/Svalker1989/Terraform_vvedenie/blob/main/02/src/main.tf)
