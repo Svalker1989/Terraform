@@ -30,3 +30,48 @@ variable "vpc_name" {
   default     = "develop"
   description = "VPC network&subnet name"
 }
+
+variable "os_family" {
+  type        = string
+  default     = "ubuntu-2004-lts"
+  description = "os_family"
+}
+
+variable "platform_id" {
+  type        = string
+  default     = "standard-v1"
+  description = "platform_id"
+}
+
+variable "disk_size" {
+  type        = number
+  default     = "1"
+  description = "disk_size"
+}
+
+variable "single_name" {
+  type        = string
+  default     = "storage"
+  description = "single_name"
+}
+
+variable "vms_resources" {
+  type = map(object({
+    cores = number
+    memory  = number
+    core_fraction = number
+  }))
+}
+
+variable "metadata" {
+  type = map(object({
+    serial-port-enable = number
+    ssh-keys  = string
+  }))
+}
+
+variable "each_vm" {
+  type = map(object({  vm_name=string, cpu=number, ram=number, disk_volume=number, core_fraction=number }))
+}
+
+#each["vm_name"]
