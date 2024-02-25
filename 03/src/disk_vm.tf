@@ -20,10 +20,8 @@ resource "yandex_compute_disk" "volume" {
   }
 
  dynamic "secondary_disk" {
-#   for_each = "${yandex_compute_disk.storage_1.*.id}"
-   for_each = { for vol in yandex_compute_disk.volume[*]: vol.name=> vol }
+    for_each = "${yandex_compute_disk.volume.*.id}" 
    content {
-#     disk_id = yandex_compute_disk.volume["${secondary_disk.key}"].id
      disk_id = secondary_disk.value.id
    }
   }
