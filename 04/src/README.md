@@ -27,28 +27,27 @@
 3. Добавьте в файл cloud-init.yml установку nginx.
 4. Предоставьте скриншот подключения к консоли и вывод команды ```sudo nginx -t```, скриншот консоли ВМ yandex cloud с их метками. Откройте terraform console и предоставьте скриншот содержимого модуля. Пример: > module.marketing_vm
 Скриншоты:  
-![Z1_1]()  
+![](https://github.com/Svalker1989/Terraform_vvedenie/blob/main/04/src/Z1_1.PNG)  
 Из консоли yandex cloud:  
-![Z1_2]()  
+![](https://github.com/Svalker1989/Terraform_vvedenie/blob/main/04/src/Z1_2.PNG)  
 Из консоли terraform:
-![Z1_3]()  
+![](https://github.com/Svalker1989/Terraform_vvedenie/blob/main/04/src/Z1_3.PNG)  
 ------
 
 ### Задание 2
 
-1. Напишите локальный модуль vpc [main.tf](), который будет создавать 2 ресурса: **одну** сеть и **одну** подсеть в зоне, объявленной при вызове модуля, например: ```ru-central1-a```.
+1. Напишите локальный модуль vpc [main.tf](https://github.com/Svalker1989/Terraform_vvedenie/blob/main/04/src/vpc/main.tf), который будет создавать 2 ресурса: **одну** сеть и **одну** подсеть в зоне, объявленной при вызове модуля, например: ```ru-central1-a```.
 2. Вы должны передать в модуль переменные с названием сети, zone и v4_cidr_blocks.
 3. Модуль должен возвращать в root module с помощью output информацию о yandex_vpc_subnet. Пришлите скриншот информации из terraform console о своем модуле. Пример: > module.vpc_dev 
-![Z2]()  
+![](https://github.com/Svalker1989/Terraform_vvedenie/blob/main/04/src/Z2.PNG)  
 4. Замените ресурсы yandex_vpc_network и yandex_vpc_subnet созданным модулем. Не забудьте передать необходимые параметры сети из модуля vpc в модуль с виртуальной машиной.
 5. Сгенерируйте документацию к модулю с помощью terraform-docs.
 Сгенерировал командой  
 `sudo docker run --rm --volume "$(pwd):/home/str/terraform/04/src/vpc" -u $(id -u) quay.io/terraform-docs/terraform-docs:0.17.0 markdown /home/str/terraform/04/src/vpc > doc.md`
 Файл с докой:  
-[doc.md]()
+[doc.md](https://github.com/Svalker1989/Terraform_vvedenie/blob/main/04/src/vpc/doc.md)
  
 Пример вызова
-
 ```
 module "vpc_dev" {
   source       = "./vpc"
@@ -57,21 +56,20 @@ module "vpc_dev" {
   cidr = "10.0.1.0/24"
 }
 ```
-
 ### Задание 3
 1. Выведите список ресурсов в стейте.  
 Команда:  
 `terraform state list`  
-![Z3_1]()  
+![](https://github.com/Svalker1989/Terraform_vvedenie/blob/main/04/src/Z3_1.PNG)  
 2. Полностью удалите из стейта модуль vpc.
 Команда:  
 `terraform state rm module.module_vpc`  
-![Z3_2]()  
+![](https://github.com/Svalker1989/Terraform_vvedenie/blob/main/04/src/Z3_2.PNG)  
 3. Полностью удалите из стейта модуль vm.
 Команда:  
 `terraform state rm module.marketing`
 4. Импортируйте всё обратно. Проверьте terraform plan.
-![Z3_3]()   
+![](https://github.com/Svalker1989/Terraform_vvedenie/blob/main/04/src/Z3_3.PNG)   
 Команды:  
 `terraform import module.module_vpc.yandex_vpc_network.module_vpc[0] enp9brdq4sclkkmmum8o`  
 `terraform import module.module_vpc.yandex_vpc_subnet.module_vpc_subnet e9bnhk4s9dgl3fscgjti`  
@@ -127,7 +125,8 @@ resource "yandex_vpc_subnet" "module_vpc_subnet" {
 }
 ```
 Созданные подсети:  
-![Z4]()
+![](https://github.com/Svalker1989/Terraform_vvedenie/blob/main/04/src/Z4.PNG)  
+  
 ### Задание 5*
 
 1. Напишите модуль для создания кластера managed БД Mysql в Yandex Cloud с одним или несколькими(2 по умолчанию) хостами в зависимости от переменной HA=true или HA=false. Используйте ресурс yandex_mdb_mysql_cluster: передайте имя кластера и id сети.
