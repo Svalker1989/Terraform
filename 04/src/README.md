@@ -30,7 +30,7 @@
 ![](https://github.com/Svalker1989/Terraform_vvedenie/blob/main/04/src/Z1_1.PNG)  
 Из консоли yandex cloud:  
 ![](https://github.com/Svalker1989/Terraform_vvedenie/blob/main/04/src/Z1_2.PNG)  
-Из консоли terraform:
+Из консоли terraform:  
 ![](https://github.com/Svalker1989/Terraform_vvedenie/blob/main/04/src/Z1_3.PNG)  
 ------
 
@@ -38,7 +38,7 @@
 
 1. Напишите локальный модуль vpc [main.tf](https://github.com/Svalker1989/Terraform_vvedenie/blob/main/04/src/vpc/main.tf), который будет создавать 2 ресурса: **одну** сеть и **одну** подсеть в зоне, объявленной при вызове модуля, например: ```ru-central1-a```.
 2. Вы должны передать в модуль переменные с названием сети, zone и v4_cidr_blocks.
-3. Модуль должен возвращать в root module с помощью output информацию о yandex_vpc_subnet. Пришлите скриншот информации из terraform console о своем модуле. Пример: > module.vpc_dev 
+3. Модуль должен возвращать в root module с помощью output информацию о yandex_vpc_subnet. Пришлите скриншот информации из terraform console о своем модуле. Пример: > module.vpc_dev   
 ![](https://github.com/Svalker1989/Terraform_vvedenie/blob/main/04/src/Z2.PNG)  
 4. Замените ресурсы yandex_vpc_network и yandex_vpc_subnet созданным модулем. Не забудьте передать необходимые параметры сети из модуля vpc в модуль с виртуальной машиной.
 5. Сгенерируйте документацию к модулю с помощью terraform-docs.
