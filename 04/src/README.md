@@ -43,7 +43,7 @@
 4. Замените ресурсы yandex_vpc_network и yandex_vpc_subnet созданным модулем. Не забудьте передать необходимые параметры сети из модуля vpc в модуль с виртуальной машиной.
 5. Сгенерируйте документацию к модулю с помощью terraform-docs.
 Сгенерировал командой  
-`sudo docker run --rm --volume "$(pwd):/home/str/terraform/04/src/vpc" -u $(id -u) quay.io/terraform-docs/terraform-docs:0.17.0 markdown /home/str/terraform/04/src/vpc > doc.md`
+`sudo docker run --rm --volume "$(pwd):/home/str/terraform/04/src/vpc" -u $(id -u) quay.io/terraform-docs/terraform-docs:0.17.0 markdown /home/str/terraform/04/src/vpc > doc.md`  
 Файл с докой:  
 [doc.md](https://github.com/Svalker1989/Terraform_vvedenie/blob/main/04/src/vpc/doc.md)
  
