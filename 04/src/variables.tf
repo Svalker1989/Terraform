@@ -37,8 +37,8 @@ variable "vms_ssh_key" {
   type        = string
   description = "ssh-key"
 }
-
-variable "subnets" {
+#Вариант для З.4*
+/*variable "subnets" {
   description = <<EOF
   "Describe your subnet and zone preferences."
   Example:
@@ -50,6 +50,6 @@ variable "subnets" {
   EOF
   type        = list(object({  zone=string, cidr =string }))
   default     = null
-}
+}*/
 
 
