@@ -1,4 +1,4 @@
-/*variable "default_zone" {
+variable "default_zone" {
   type        = string
   description = "https://cloud.yandex.ru/docs/overview/concepts/geo-scope"
 }
@@ -6,7 +6,7 @@ variable "default_cidr" {
   type        = list(string)
   description = "https://cloud.yandex.ru/docs/vpc/operations/subnet-create"
 }
-*/
+
 variable "vpc_name" {
   type        = string
   description = "VPC network&subnet name"
@@ -23,8 +23,8 @@ variable "vpc_id" {
   default     = null
   description = "Existing `network_id` (`vpc-id`) where resources will be created"
 }
-
-variable "subnets" {
+#Вариант для З.4*
+/*variable "subnets" {
   description = <<EOF
   "Describe your subnet and zone preferences."
   Example:
@@ -36,4 +36,4 @@ variable "subnets" {
   EOF
   type        = list(object({  zone=string, cidr=string }))
   default     = null
-}
+}*/
