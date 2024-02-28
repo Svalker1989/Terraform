@@ -33,25 +33,23 @@ variable "vpc_name" {
 
 ###common vars
 
-variable "vms_ssh_root_key" {
+variable "vms_ssh_key" {
   type        = string
-  default     = "your_ssh_ed25519_key"
-  description = "ssh-keygen -t ed25519"
+  description = "ssh-key"
 }
 
-###example vm_web var
-variable "vm_web_name" {
-  type        = string
-  default     = "netology-develop-platform-web"
-  description = "example vm_web_ prefix"
+variable "subnets" {
+  description = <<EOF
+  "Describe your subnet and zone preferences."
+  Example:
+  subnets = [
+    { zone = "ru-central1-a", cidr = "10.121.0.0/16" },
+    { zone = "ru-central1-b", cidr = "10.0.2.0/24" },
+    { zone = "ru-central1-c", cidr = "10.0.3.0/24" }
+  ]
+  EOF
+  type        = list(object({  zone=string, cidr =string }))
+  default     = null
 }
-
-###example vm_db var
-variable "vm_db_name" {
-  type        = string
-  default     = "netology-develop-platform-db"
-  description = "example vm_db_ prefix"
-}
-
 
 
