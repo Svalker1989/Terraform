@@ -35,6 +35,10 @@
 ------
 
 ### Задание 2
+За основу брал источники:
+* [terraform-yc-vpc](https://github.com/terraform-yc-modules/terraform-yc-vpc)
+* [vpc-module](https://cloud.yandex.ru/ru/docs/tutorials/infrastructure-management/terraform-modules#vpc-module)
+* [yandex_compute_instance](https://github.com/udjin10/yandex_compute_instance)
 
 1. Напишите локальный модуль vpc [main.tf](), который будет создавать 2 ресурса: **одну** сеть и **одну** подсеть в зоне, объявленной при вызове модуля, например: ```ru-central1-a```.
 2. Вы должны передать в модуль переменные с названием сети, zone и v4_cidr_blocks.
