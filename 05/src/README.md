@@ -30,6 +30,10 @@
 - из [ДЗ к лекции 4](https://github.com/netology-code/ter-homeworks/tree/main/04/src),
 - из [демо к лекции 4](https://github.com/netology-code/ter-homeworks/tree/main/04/demonstration1).
 2. Проверьте код с помощью tflint и checkov. Вам не нужно инициализировать этот проект.
+tflint  
+`sudo docker run --rm -v "$(pwd):/home/str/terraform/05/src" ghcr.io/terraform-linters/tflint --chdir /home/str/terraform/05/src`  
+checkov  
+``
 3. Перечислите, какие **типы** ошибок обнаружены в проекте (без дублей).
 ### tflint
 По ДЗ из Л4:
@@ -72,7 +76,7 @@
 3. Откройте новый pull request 'terraform-hotfix' --> 'terraform-05'. 
 4. Вставьте в комментарий PR результат анализа tflint и checkov, план изменений инфраструктуры из вывода команды terraform plan.
 5. Пришлите ссылку на PR для ревью. Вливать код в 'terraform-05' не нужно.
-
+[PR](https://github.com/Svalker1989/Terraform_vvedenie/pull/5)  
 ------
 ### Задание 4
 
