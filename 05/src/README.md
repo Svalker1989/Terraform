@@ -84,12 +84,12 @@ checkov
 
 - type=string, description="ip-адрес" — проверка, что значение переменной содержит верный IP-адрес с помощью функций cidrhost() или regex(). Тесты:  "192.168.0.1" и "1920.1680.0.1";  
 good:  
-![](https://github.com/Svalker1989/Terraform_vvedenie/blob/terraform-05/05/src/Z4_1.PNG)
+![](https://github.com/Svalker1989/Terraform_vvedenie/blob/terraform-05/05/src/Z4_1.PNG)  
 bad:  
 ![](https://github.com/Svalker1989/Terraform_vvedenie/blob/terraform-05/05/src/Z4_2.PNG)  
 - type=list(string), description="список ip-адресов" — проверка, что все адреса верны. Тесты:  ["192.168.0.1", "1.1.1.1", "127.0.0.1"] и ["192.168.0.1", "1.1.1.1", "1270.0.0.1"].  
 good:  
-![](https://github.com/Svalker1989/Terraform_vvedenie/blob/terraform-05/05/src/Z4_3.PNG)
+![](https://github.com/Svalker1989/Terraform_vvedenie/blob/terraform-05/05/src/Z4_3.PNG)  
 bad:  
 ![](https://github.com/Svalker1989/Terraform_vvedenie/blob/terraform-05/05/src/Z4_4.PNG)  
 
