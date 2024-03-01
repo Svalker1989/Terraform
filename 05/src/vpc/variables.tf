@@ -11,6 +11,17 @@ variable "default_cidr" {
   }
 }
 
+# Проверка спсика IP
+/*variable "default_cidr" {
+  type        = list(string)
+  description = "https://cloud.yandex.ru/docs/vpc/operations/subnet-create"
+  default     = ["192.168.0.1/24", "1.1.1.1/24", "127.0.0.1/24"]
+  validation {
+    condition = alltrue([can(regex("[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}/24",var.default_cidr[0])),can(regex("[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}/24",var.default_cidr[1])),can(regex("[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}/24",var.default_cidr[2]))])
+    error_message = "Invalid cidr format."
+  }
+}*/
+
 variable "vpc_name" {
   type        = string
   description = "VPC network&subnet name"
