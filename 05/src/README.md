@@ -33,7 +33,7 @@
 tflint  
 `sudo docker run --rm -v "$(pwd):/home/str/terraform/05/src" ghcr.io/terraform-linters/tflint --chdir /home/str/terraform/05/src`  
 checkov  
-``
+`checkov -f ./main.tf`
 3. Перечислите, какие **типы** ошибок обнаружены в проекте (без дублей).
 ### tflint
 По ДЗ из Л4:
