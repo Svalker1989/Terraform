@@ -4,7 +4,11 @@ variable "default_zone" {
 }
 variable "default_cidr" {
   type        = list(string)
-  description = "https://cloud.yandex.ru/docs/vpc/operations/subnet-create"
+  description = "Example to validate CIDR"
+  validation {
+    condition = can(regex("[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}/24", var.default_cidr[0]))
+    error_message = "Invalid cidr format."
+  }
 }
 
 variable "vpc_name" {

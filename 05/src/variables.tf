@@ -19,11 +19,27 @@ variable "default_zone" {
   default     = "ru-central1-a"
   description = "https://cloud.yandex.ru/docs/overview/concepts/geo-scope"
 }
+
 variable "default_cidr" {
   type        = list(string)
-  default     = ["10.0.1.0/24"]
   description = "https://cloud.yandex.ru/docs/vpc/operations/subnet-create"
+  default     = ["1920.1680.0.1"]
+  validation {
+    condition = can(regex("[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}/24", var.default_cidr[0]))
+    error_message = "Invalid cidr format."
+  }
 }
+
+# Проверка спсика IP
+/*variable "default_cidr" {
+  type        = list(string)
+  description = "https://cloud.yandex.ru/docs/vpc/operations/subnet-create"
+  default     = ["192.168.0.1/24", "1.1.1.1/24", "127.0.0.1/24"]
+  validation {
+    condition = alltrue([can(regex("[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}/24",var.default_cidr[0])),can(regex("[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}/24",var.default_cidr[1])),can(regex("[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}/24",var.default_cidr[2]))])
+    error_message = "Invalid cidr format."
+  }
+}*/
 
 variable "vpc_name" {
   type        = string
