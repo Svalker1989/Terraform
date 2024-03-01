@@ -59,14 +59,14 @@ checkov
 
 1. Возьмите ваш GitHub-репозиторий с **выполненным ДЗ 4** в ветке 'terraform-04' и сделайте из него ветку 'terraform-05'.
 2. Повторите демонстрацию лекции: настройте YDB, S3 bucket, yandex service account, права доступа и мигрируйте state проекта в S3 с блокировками. Предоставьте скриншоты процесса в качестве ответа.
-![Z2]()  
-![Z2_1]()  
+![](https://github.com/Svalker1989/Terraform_vvedenie/blob/terraform-05/05/src/Z2.PNG)  
+![](https://github.com/Svalker1989/Terraform_vvedenie/blob/terraform-05/05/src/Z2_1.PNG)  
 3. Закоммитьте в ветку 'terraform-05' все изменения.
 4. Откройте в проекте terraform console, а в другом окне из этой же директории попробуйте запустить terraform apply.
 5. Пришлите ответ об ошибке доступа к state.
-![Z2_2]()  
+![](https://github.com/Svalker1989/Terraform_vvedenie/blob/terraform-05/05/src/Z2_2.PNG)  
 6. Принудительно разблокируйте state. Пришлите команду и вывод.
-![Z2_3]()  
+![](https://github.com/Svalker1989/Terraform_vvedenie/blob/terraform-05/05/src/Z2_3.PNG)  
 
 ------
 ### Задание 3  
@@ -84,10 +84,10 @@ checkov
 
 - type=string, description="ip-адрес" — проверка, что значение переменной содержит верный IP-адрес с помощью функций cidrhost() или regex(). Тесты:  "192.168.0.1" и "1920.1680.0.1";
 - type=list(string), description="список ip-адресов" — проверка, что все адреса верны. Тесты:  ["192.168.0.1", "1.1.1.1", "127.0.0.1"] и ["192.168.0.1", "1.1.1.1", "1270.0.0.1"].
-![Z4_1]()  
-![Z4_2]()  
-![Z4_3]()  
-![Z4_4]()  
+![](https://github.com/Svalker1989/Terraform_vvedenie/blob/terraform-05/05/src/Z4_1.PNG)  
+![](https://github.com/Svalker1989/Terraform_vvedenie/blob/terraform-05/05/src/Z4_2.PNG)  
+![](https://github.com/Svalker1989/Terraform_vvedenie/blob/terraform-05/05/src/Z4_3.PNG)  
+![](https://github.com/Svalker1989/Terraform_vvedenie/blob/terraform-05/05/src/Z4_4.PNG)  
 
 ## Дополнительные задания (со звёздочкой*)
 
